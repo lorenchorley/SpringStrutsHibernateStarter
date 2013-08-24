@@ -20,6 +20,7 @@
     <context:annotation-config />
     <context:component-scan base-package="s2sh" />
  
+    <!-- Internationalisation Configuration -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="classpath:messages" />
         <property name="defaultEncoding" value="UTF-8" />
