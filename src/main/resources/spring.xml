@@ -16,13 +16,13 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
  
-    <!-- Annotation Configuration -->
+    <!-- Annotation and Bean Configuration -->
     <context:annotation-config />
     <context:component-scan base-package="s2sh" />
  
-    <!-- Internationalisation Configuration -->
+    <!-- Internationalisation Configuration - to check -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="classpath:messages" />
+        <property name="basename" value="classpath:i18n.messages" />
         <property name="defaultEncoding" value="UTF-8" />
     </bean>
     
@@ -32,5 +32,16 @@
     
     <!-- Transaction Manager Configuration -->
     <import resource="config/database/TransactionManager.xml"/>
+    
+    <!-- DAO Beans (auto-wired to session factory) 
+    <bean id="employeeDao" class="s2sh.dao.EmployeeDaoImpl" />-->
+    
+    <!-- Service or Business Beans (auto-wired to DAOs) -->
+    <bean id="employeeManager" class="s2sh.service.EmployeeManagerImpl" />
+    
+    <!-- Struts2 Action Beans -->
+    <bean id="employeeAction" class="s2sh.action.EmployeeAction">
+        <property name="employeeManager" ref="employeeManager" />
+    </bean>
     
 </beans>

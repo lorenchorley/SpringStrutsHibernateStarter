@@ -16,7 +16,7 @@
         <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
         
         <!-- Versions -->
-        <org.springframework.version>3.2.4.RELEASE</org.springframework.version>
+        <org.springframework.version>2.5.6</org.springframework.version>
         <org.apache.struts.version>2.3.15.1</org.apache.struts.version>
         <org.hibernate.version>3.6.3.Final</org.hibernate.version>
         <junit.version>4.10</junit.version>
@@ -32,12 +32,13 @@
             <version>${org.apache.struts.version}</version>
         </dependency>
         
-        <!-- Struts2 Spring integration 
+        <!-- Struts2 Spring integration -->
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-spring-plugin</artifactId>
             <version>${org.apache.struts.version}</version>
-        </dependency>-->
+        </dependency>
+        
         
         <!-- Spring -->
         <!--
@@ -46,10 +47,10 @@
 	-->
 	<dependency>
 	  <groupId>org.springframework</groupId>
-	  <artifactId>spring-core</artifactId>
+	  <artifactId>spring</artifactId>
 	  <version>${org.springframework.version}</version>
 	</dependency>
-	 
+	
 	<!--
 	    Expression Language (depends on spring-core)
 	    Define this if you use Spring Expression APIs (org.springframework.expression.*)
@@ -63,12 +64,12 @@
 	<!--
 	    Bean Factory and JavaBeans utilities (depends on spring-core)
 	    Define this if you use Spring Bean APIs (org.springframework.beans.*)
-	-->
+	
 	<dependency>
 	  <groupId>org.springframework</groupId>
 	  <artifactId>spring-beans</artifactId>
 	  <version>${org.springframework.version}</version>
-	</dependency>
+	</dependency>-->
 	 
 	<!--
 	    Aspect Oriented Programming (AOP) Framework (depends on spring-core, spring-beans)

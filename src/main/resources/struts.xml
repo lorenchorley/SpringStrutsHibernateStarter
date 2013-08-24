@@ -6,5 +6,13 @@
 <struts>
  	<constant name="struts.devMode" value="true" />
  	
+        <package name="default" namespace="/" extends="struts-default">
+            
+            <!-- employeeAction is a spring bean -->
+            <action name="addEmployee" class="employeeAction" method="addEmployee">
+                <result name="success">/pages/success.jsp?action=addemployee</result>
+            </action>
+            
+        </package>
 	
 </struts>

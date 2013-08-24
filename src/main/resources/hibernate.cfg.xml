@@ -3,6 +3,6 @@
 
 <hibernate-configuration>
   <session-factory>
-    <mapping class="s2sh.entity.EmployeeEntity" />
+    <mapping class="s2sh.model.entity.EmployeeEntity" />
   </session-factory>
 </hibernate-configuration>
