@@ -7,11 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import s2sh.model.entity.EmployeeEntity;
 
-@Repository
-public class EmployeeDaoImpl implements EmployeeDao {
+@Repository(value = "employeeDao")
+public class EmployeeDaoImpl implements BasicDao<EmployeeEntity, Integer> {
+
+    private SessionFactory sessionFactory;
 
     @Autowired
-    private SessionFactory sessionFactory;
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        System.out.println("employeeDaoImpl.setSessionFactory(" + ((sessionFactory == null) ? "null" : "sessionFactory") + ") called.");
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public void add(EmployeeEntity employee) {
@@ -36,8 +41,4 @@ public class EmployeeDaoImpl implements EmployeeDao {
         }
     }
     
-    public void setSessionFactory(SessionFactory SessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-
 }

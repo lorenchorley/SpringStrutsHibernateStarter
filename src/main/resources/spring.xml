@@ -15,7 +15,11 @@
         http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
- 
+
+    <!-- AOP Configuration -->
+    <aop:aspectj-autoproxy />
+    <bean id="loggingAspect" class="s2sh.aspect.LoggingAspect" />
+    
     <!-- Annotation and Bean Configuration -->
     <context:annotation-config />
     <context:component-scan base-package="s2sh" />
@@ -36,12 +40,12 @@
     <!-- DAO Beans (auto-wired to session factory) 
     <bean id="employeeDao" class="s2sh.dao.EmployeeDaoImpl" />-->
     
-    <!-- Service or Business Beans (auto-wired to DAOs) -->
-    <bean id="employeeManager" class="s2sh.service.EmployeeManagerImpl" />
+    <!-- Service or Business Beans (auto-wired to DAOs) 
+    <bean id="employeeManager" class="s2sh.service.EmployeeManagerImpl" />-->
     
-    <!-- Struts2 Action Beans -->
+    <!-- Struts2 Action Beans 
     <bean id="employeeAction" class="s2sh.action.EmployeeAction">
         <property name="employeeManager" ref="employeeManager" />
-    </bean>
+    </bean>-->
     
 </beans>

@@ -5,15 +5,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import s2sh.dao.EmployeeDao;
+import s2sh.dao.BasicDao;
 
 import s2sh.model.entity.EmployeeEntity;
 
-@Service
+@Service(value = "employeeManager")
 public class EmployeeManagerImpl implements EmployeeManager {
-	
+    
+    private BasicDao<EmployeeEntity, Integer> employeeDao;
+
     @Autowired
-    private EmployeeDao employeeDao;
+    public void setEmployeeDao(BasicDao<EmployeeEntity, Integer> employeeDao) {
+        System.out.println("employeeManager.setEmployeeDao(" + ((employeeDao == null) ? "null" : "employeeDao") + ") called.");
+        this.employeeDao = employeeDao;
+    }
 
     @Override
     @Transactional
@@ -38,9 +43,5 @@ public class EmployeeManagerImpl implements EmployeeManager {
     public void delete(Integer employeeId) {
         employeeDao.delete(employeeId);
     }
-
-    public void setEmployeeDAO(EmployeeDao employeeDAO) {
-        this.employeeDao = employeeDAO;
-    }
-
+    
 }
