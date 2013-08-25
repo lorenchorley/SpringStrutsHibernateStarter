@@ -23,7 +23,7 @@ public class EmployeeAction implements ModelDriven {
     }
 
     public List<EmployeeEntity> getEmployeeList() {
-        return employeeList;
+        return employeeManager.getAll();
     }
 
     public void setEmployeeList(List<EmployeeEntity> employeeList) {

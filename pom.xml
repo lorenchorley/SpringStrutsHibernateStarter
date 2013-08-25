@@ -84,12 +84,12 @@
 	<!--
 	    Application Context (depends on spring-core, spring-expression, spring-aop, spring-beans)
 	    This is the central artifact for Spring's Dependency Injection Container and is generally always defined
-	-->
+	
 	<dependency>
 	  <groupId>org.springframework</groupId>
 	  <artifactId>spring-context</artifactId>
 	  <version>${org.springframework.version}</version>
-	</dependency>
+	</dependency>-->
 	 
 	<!--
 	    Various Application Context utilities, including EhCache, JavaMail, Quartz, and Freemarker integration
@@ -148,12 +148,12 @@
 	    Web application development utilities applicable to both Servlet and Portlet Environments
 	    (depends on spring-core, spring-beans, spring-context)
 	    Define this if you use Spring MVC, or wish to use Struts, JSF, or another web framework with Spring (org.springframework.web.*)
-	-->
+	
 	<dependency>
 	  <groupId>org.springframework</groupId>
 	  <artifactId>spring-web</artifactId>
 	  <version>${org.springframework.version}</version>
-	</dependency>
+	</dependency>-->
 	 
 	<!--
 	    Spring MVC for Servlet Environments (depends on spring-core, spring-beans, spring-context, spring-web)

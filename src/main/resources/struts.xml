@@ -5,12 +5,21 @@
  
 <struts>
  	<constant name="struts.devMode" value="true" />
- 	
+ 	<constant name="struts.custom.i18n.resources" value="i18n/messages" />
+        
         <package name="default" namespace="/" extends="struts-default">
             
             <!-- employeeAction is a spring bean -->
             <action name="addEmployee" class="employeeAction" method="addEmployee">
                 <result name="success">/pages/success.jsp?action=addemployee</result>
+            </action>
+            <action name="listEmployees" class="employeeAction" method="listEmployees">
+                <result name="success">/pages/AddEmployee.jsp</result>
+            </action>
+            
+            <!-- Handles localisation changes -->
+            <action name="locale" class="s2sh.action.LocaleAction">
+                <result name="redirect">${url}</result>
             </action>
             
         </package>

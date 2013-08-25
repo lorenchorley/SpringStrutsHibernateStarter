@@ -19,25 +19,28 @@
 
         <h2>All Customers</h2>
 
-
-            <table border="1px" cellpadding="8px">
+        <table border="1px" cellpadding="8px">
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Telephone</th>
+            </tr>
+            <s:iterator value="employeeList" status="userStatus">
                 <tr>
-                    <th>ID</th>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Email</th>
-                    <th>Telephone</th>
+                    <td><s:property value="id" /></td>
+                    <td><s:property value="firstname" /></td>
+                    <td><s:property value="lastname" /></td>
+                    <td><s:property value="email" /></td>
+                    <td><s:property value="telephone" /></td>
                 </tr>
-                <s:iterator value="listEmployees" status="userStatus">
-                    <tr>
-                        <td><s:property value="id" /></td>
-                        <td><s:property value="firstname" /></td>
-                        <td><s:property value="lastname" /></td>
-                        <td><s:property value="email" /></td>
-                        <td><s:property value="telephone" /></td>
-                    </tr>
-                </s:iterator>
-            </table>
+            </s:iterator>
+        </table>
+
+        <s:form action="listEmployees" >
+            <s:submit title="refresh" />
+        </s:form>
         
     </body>
 </html>
